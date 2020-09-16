@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="com._like" namespace="/" extends="struts-default">
+		<action name="*_*" class="{1}Action" method="{2}">
+			<result name="list">/WEB-INF/views/{1}/list.jsp</result>
+			<result name="success" type="redirectAction">{1}</result>
+			<result name="input">/WEB-INF/views/{1}/input.jsp</result>
+			<result name="main">/WEB-INF/views/{1}/main.jsp</result>
+			<result name="inform">/WEB-INF/views/{1}/inForm.jsp</result>
+			<result name="outform">/WEB-INF/views/{1}/outForm.jsp</result>
+			<result name="file">/WEB-INF/views/{1}/excelParse.jsp</result>
+			<result name="echarts">/WEB-INF/views/{1}/echartsShow.jsp</result>
+			<result name="oneself">/WEB-INF/views/{1}/oneself.jsp</result>
+			<result name="OutputForm">/WEB-INF/views/{1}/OutForm.jsp</result>
+			<result name="InputForm">/WEB-INF/views/{1}/inForm.jsp</result>
+			<result name="login">index.jsp</result>
+			<result name="inmanager">/WEB-INF/views/{1}/inmanager.jsp</result>
+			<result name="outmanager">/WEB-INF/views/{1}/outmanager.jsp</result>
+			<result name="deletein">/WEB-INF/views/{1}/inmanager.jsp</result>
+			<result name="updatein">/WEB-INF/views/{1}/inmanagerUpdate.jsp</result>
+			<result name="deleteout">/WEB-INF/views/{1}/outmanager.jsp</result>
+			<result name="updateout">/WEB-INF/views/{1}/outmanagerUpdate.jsp</result>
+			<result name="outlist">/WEB-INF/views/{1}/outformlist.jsp</result>
+			<result name="inlist">/WEB-INF/views/{1}/informlist.jsp</result>
+			<result name="deleteerror">/WEB-INF/views/deleterror.jsp</result>
+			<result name="oneselfupdate">/WEB-INF/views/updategood.jsp</result>
+			<result name="tablesuccess">/WEB-INF/views/tablesuccess.jsp</result>
+			<result name="Outformnull">/WEB-INF/views/outputForm/OutForm.jsp</result>
+			<result name="Informnull">/WEB-INF/views/inputForm/inForm.jsp</result>
+		</action>
+	</package>
+	<constant name="struts.multipart.maxSize" value="100000000"/>
+
+
+</struts>

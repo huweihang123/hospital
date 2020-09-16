@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 配置service -->
+	<bean id="drugsService" class="com._like.Service.impl.DrugsServiceImpl">
+		<property name="drugsDAO" ref="DrugsDAOImpl"/>
+	</bean>
+
+	<bean id="purchaseManagerService" class="com._like.Service.impl.PurchaseManagerServiceImpl">
+		<property name="purchaseManagerDAO" ref="PurchaseManagerDAOImpl"/>
+	</bean>
+
+	<bean id="stockManagerService" class="com._like.Service.impl.StockManagerServiceImpl">
+		<property name="stockManagerDAO" ref="StockManagerDAOImpl"/>
+	</bean>
+
+	<bean id="supplierService" class="com._like.Service.impl.SupplierServiceImpl">
+		<property name="supplierDAO" ref="SupplierDAOImpl"/>
+	</bean>
+
+	<bean id="warehouseService" class="com._like.Service.impl.WarehouseServiceImpl">
+		<property name="warehouseDAO" ref="WarehouseDAOImpl"/>
+	</bean>
+
+	<bean id="systemManagerService" class="com._like.Service.impl.SystemManagerServiceImpl">
+		<property name="systemManagerDAO" ref="SystemManagerDAOImpl"/>
+	</bean>
+
+	<bean id="outputFormService" class="com._like.Service.impl.OutputFormServiceImpl">
+		<property name="outputFormDAO" ref="outputFormDAO"/>
+	</bean>
+
+	<bean id="outputDrugsService" class="com._like.Service.impl.OutputDrugsServiceImpl">
+		<property name="outputDrugsDAO" ref="outputDrugsDAO"/>
+	</bean>
+
+	<bean id="inputDrugsService" class="com._like.Service.impl.InputDrugsServiceImpl">
+		<property name="inputDrugsDAO" ref="inputDrugsDAO"/>
+	</bean>
+
+	<bean id="inputFormService" class="com._like.Service.impl.InputFormServiceImpl">
+		<property name="inputDrugsDAO" ref="inputFormDAO"/>
+	</bean>
+	</beans>

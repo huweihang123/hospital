@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="baseDAO" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+
+	<bean id="DrugsDAOImpl" class="com._like.DAO.impl.DrugsDAOImpl" parent="baseDAO"/>
+
+	<bean id="PurchaseManagerDAOImpl" class="com._like.DAO.impl.PurchaseManagerDAOImpl" parent="baseDAO"/>
+
+	<bean id="StockManagerDAOImpl" class="com._like.DAO.impl.StockManagerDAOImpl" parent="baseDAO"/>
+
+	<bean id="SupplierDAOImpl" class="com._like.DAO.impl.SupplierDAOImpl" parent="baseDAO"/>
+
+	<bean id="SystemManagerDAOImpl" class="com._like.DAO.impl.SystemManagerDAOImpl" parent="baseDAO"/>
+
+	<bean id="WarehouseDAOImpl" class="com._like.DAO.impl.WarehouseDAOImpl" parent="baseDAO"/>
+
+	<bean id="outputFormDAO" class="com._like.DAO.impl.OutputFormDAOImpl" parent="baseDAO"/>
+
+	<bean id="inputFormDAO" class="com._like.DAO.impl.InputFormDAOImpl" parent="baseDAO"/>
+
+	<bean id="outputDrugsDAO" class="com._like.DAO.impl.OutputDrugsDAOImpl" parent="baseDAO"/>
+
+	<bean id="inputDrugsDAO" class="com._like.DAO.impl.InputDrugsDAOImpl" parent="baseDAO"/>
+	</beans>

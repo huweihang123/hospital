@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 配置action -->
+	<bean id="drugsAction" class="com._like.Action.DrugsAction" scope="prototype">
+		<property name="drugsService" ref="drugsService"/>
+		<property name="warehouseService" ref="warehouseService"/>
+	</bean>
+
+	<bean id="supplierAction" class="com._like.Action.SupplierAction" scope="prototype">
+		<property name="supplierService" ref="supplierService"/>
+	</bean>
+
+	<bean id="warehouseAction" class="com._like.Action.WarehouseAction" scope="prototype">
+		<property name="warehouseService" ref="warehouseService"/>
+	</bean>
+
+	<bean id="stockmanagerAction" class="com._like.Action.StockManagerAction" scope="prototype">
+		<property name="stockManagerService" ref="stockManagerService"/>
+		<property name="warehouseService" ref="warehouseService"/>
+	</bean>
+
+	<bean id="purchasemanagerAction" class="com._like.Action.PurchaseManagerAction" scope="prototype">
+		<property name="purchaseManagerService" ref="purchaseManagerService"/>
+		<property name="warehouseService" ref="warehouseService"/>
+	</bean>
+
+	<bean id="outputFormAction" class="com._like.Action.OutputFormAction" scope="prototype">
+		<property name="outputFormService" ref="outputFormService"/>
+		<property name="outputDrugsService" ref="outputDrugsService"/>
+		<property name="stockManagerService" ref="stockManagerService"/>
+		<property name="warehouseService" ref="warehouseService"/>
+		<property name="drugsService" ref="drugsService"/>
+	</bean>
+
+	<bean id="inputFormAction" class="com._like.Action.InputFormAction" scope="prototype">
+		<property name="inputFormService" ref="inputFormService"/>
+		<property name="inputDrugsService" ref="inputDrugsService"/>
+		<property name="purchaseManagerService" ref="purchaseManagerService"/>
+		<property name="warehouseService" ref="warehouseService"/>
+		<property name="supplierService" ref="supplierService"/>
+		<property name="drugsService" ref="drugsService"/>
+	</bean>
+
+	<bean id="systemmanagerAction" class="com._like.Action.SystemManagerAction" scope="prototype">
+		<property name="systemManagerService" ref="systemManagerService"/>
+		<property name="stockManagerService" ref="stockManagerService"/>
+		<property name="purchaseManagerService" ref="purchaseManagerService"/>
+		<property name="inputFormService" ref="inputFormService"/>
+		<property name="outputFormService" ref="outputFormService"/>
+	</bean>
+
+
+	<bean id="parseexcelAction" class="com._like.Action.ParseExcelAction" scope="prototype"/>
+
+	<bean id="logoutAction" class="com._like.Action.logoutAction" scope="prototype"/>
+</beans>

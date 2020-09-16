@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com._like.Domain">
+	
+	<class name="Warehouse">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"/>
+		<property name="address"/>
+		<property name="createDate"/>
+		<property name="size"/>
+		<property name="drugsCost"/>
+		<property name="Maxsize"/>
+		<set name="outputDrugs" >
+			<key column="WAREHOUSE_ID"/>
+			<one-to-many class="com._like.Domain.OutputDrugs"/>
+		</set>
+		<set name="drugs" table="WAREHOUSE_DRUG" inverse="true">
+			<key column="WAREHOUSE_ID"/>
+			<many-to-many class="Drug" column="DRUG_ID"/>
+		</set>
+	</class>
+	
+</hibernate-mapping>
